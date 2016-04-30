@@ -6,7 +6,7 @@ angular.module("main")
 	$scope.getExcuse = function(){
 		$http.get("/getExcuse")
 		.then(function(returnData){
-			// console.log(returnData);
+			$scope.excuse = returnData.data;
 		})
 	}
 
