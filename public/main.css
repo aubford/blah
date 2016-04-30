@@ -11,8 +11,10 @@ button {
 p {
   position:absolute;
   z-index: 1;
-  top: 0;
-  left: 40;
+  top: 450px;
+  left: 400px;
+  color: orange;
+  font-size: 40pt;
 }
 
 .stay {

@@ -1,10 +1,9 @@
 angular.module("main", [])
 
 
-angular.module("main")
-.controller("mainController", ["$scope", "$http", function($scope, $http){
+angular.module("main").controller("mainController", ["$scope", "$http", function($scope, $http){
 
-	customExcuses = [
+	var customExcuses = [
 	"Nobody told me that this was due so soon.",
 	"I accidentally deleted my github repository.",
 	"I thought that Bob was doing this.",
@@ -31,36 +30,37 @@ angular.module("main")
 	  return Math.random()*(max-min)+min;
 	}
 
-	function getExcuse () {
+	function getExxcuse () {
 	var index= Math.floor(getRandomArbitrary(0, customExcuses.length));
 	return customExcuses[index];
-
 	}
 
-		$scope.getExcuse = function(){
+	$scope.getExcuse = function(){
 
 
 		var category= Math.floor(Math.random()*(2-0));
-		switch category{
+		switch (category){
 			case 0:
-				$scope.excuse = getExcuse();
+				$scope.excuse = getExxcuse();
 			case 1:
 				$http.get("/getExcuse")
 				.then(function(returnData){
 				$scope.excuse = returnData.data;
 		})
 	}
-<<<<<<< HEAD
+}
+
+
 
 	$scope.shakestatus = "stay"
 
 	$scope.shake = function(){
+		$scope.getExcuse()
 
-		$scope.shakestatus = "shake"
+		// $scope.shakestatus = "shake"
 
-		setTimeout(function(){
+		// setTimeout(function(){
 
-			console.log("asdfgasdf")
 			if($scope.shakestatus === "shake"){
 
 				$scope.shakestatus = "stay"
@@ -70,10 +70,10 @@ angular.module("main")
 				$scope.shakestatus = "shake"
 
 			}
-		}, 1000)
+
+		// }, 100)
 
 	}
 
-=======
->>>>>>> 22340d02c729538550c3efb846a648c1ac05a2aa
+
 }])
