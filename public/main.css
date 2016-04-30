@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  display: block;
+  background-color:transparent;
+  border:none;
+}
+
+p {
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  left: 40;
+}
+
+.stay {
+  margin: 0 auto;
+}
+
+.shake{
+  margin: 0 auto;
+  animation: shakeit .2s ease 6;
+}
+
+@keyframes shakeit {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  33%{
+    transform: translate(-100px, 0);
+  }
+
+  66%{
+    transform: translate(100px, 0);
+  }
+
+  100%{
+    transform: translate(0, 0);
+  }
+}
